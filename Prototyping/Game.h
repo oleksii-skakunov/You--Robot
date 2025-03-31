@@ -1,6 +1,7 @@
 #pragma once
 #include "BaseGame.h"
 #include "Player.h"
+#include "BulletManager.h"
 class Game : public BaseGame
 {
 public:
@@ -31,4 +32,5 @@ private:
 
 	// MEMBERS
 	Player m_Player;
+	BulletManager m_BulletManager;
 };

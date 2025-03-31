@@ -6,11 +6,11 @@ class BulletManager
 public:
 	BulletManager();
 	void Draw() const;
-	void Update();
-	void AddBullet(int bulletType);
+	void Update(float elapsedSec);
+	void AddBullet(int bulletType, const Vector2f& startPos, float amgle, int team);
 private:
-	std::vector<Bullet> m_Bullets;
-	Texture m_Texture;
+	std::vector<Bullet*> m_Bullets;
+	const Texture m_BulletTexture;
 	enum class Type {
 		Bullet
 	};

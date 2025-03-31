@@ -15,6 +15,8 @@ void Player::Draw() const
 
 void Player::Shoot(float angle)
 {
+	// check if shooting is possible
+	
 }
 
 void Player::Move(Vector2f velocity, float elapsedSec)

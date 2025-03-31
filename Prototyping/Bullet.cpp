@@ -3,7 +3,7 @@
 
 
 
-Bullet::Bullet(float traveltime, int damage, Vector2f startPos, float velocity, Texture* pTexture, float angle, int team):
+Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, float velocity, const Texture* pTexture, float angle, int team):
 	m_Traveltime{ traveltime },
 	m_Damage{ damage },
 	m_Pos{ startPos },
@@ -32,8 +32,13 @@ void Bullet::Update(float elapsedSec)
 	}
 	else {
 		m_Lifetime += elapsedSec;
-		Vector2f velocityVector{ m_Velocity / cos(double(m_Angle)), tan(double(m_Angle)) * m_Velocity };
+		Vector2f velocityVector{ m_Velocity / float(cos(double(m_Angle))), float(tan(double(m_Angle))) * m_Velocity };
 		m_Pos.x += velocityVector.x * elapsedSec;
 		m_Pos.y += velocityVector.y * elapsedSec;
 	}
+}
+
+bool Bullet::HasStopped() const
+{
+	return m_HasStopped;
 }

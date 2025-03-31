@@ -3,9 +3,10 @@
 class Bullet
 {
 public:
-	Bullet(float traveltime, int damage, Vector2f startPos, float velocity, Texture* pTexture, float angle, int team);
+	Bullet(float traveltime, int damage, const Vector2f startPos, float velocity, const Texture* pTexture, float angle, int team);
 	void Draw() const;
 	void Update(float elapsedSec);
+	bool HasStopped() const;
 private:
 	float m_Lifetime;
 	float m_Traveltime;
@@ -13,7 +14,7 @@ private:
 	int m_Damage;
 	Vector2f m_Pos;
 	float m_Velocity;
-	Texture* m_pTexture;
+	const Texture* m_pTexture;
 	bool m_HasStopped;
 	enum class Team {
 		Company
