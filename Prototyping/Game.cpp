@@ -20,11 +20,12 @@ void Game::Initialize( )
 
 void Game::Cleanup( )
 {
+	m_BulletManager.DeleteAll();
 }
 
 void Game::Update( float elapsedSec )
 {
-
+	m_BulletManager.Update(elapsedSec);
 	// Check keyboard state
 	const Uint8 *pStates = SDL_GetKeyboardState( nullptr );
 	if ( pStates[SDL_SCANCODE_W] )
@@ -50,6 +51,7 @@ void Game::Draw( ) const
 {
 	ClearBackground( );
 	m_Player.Draw();
+	m_BulletManager.Draw();
 }
 
 void Game::ProcessKeyDownEvent( const SDL_KeyboardEvent & e )
@@ -82,6 +84,18 @@ void Game::ProcessMouseMotionEvent( const SDL_MouseMotionEvent& e )
 
 void Game::ProcessMouseDownEvent( const SDL_MouseButtonEvent& e )
 {
+	switch (e.button)
+	{
+	default:
+		break;
+	case SDL_BUTTON_LEFT:
+		if (m_Player.Shoot(Vector2f{ float(e.x), float(e.y) }))
+		{
+			m_BulletManager.AddBullet(m_Player.GetBulletType(), m_Player.GetPos(), Vector2f{ float(e.x), float(e.y) }, 0);
+		}
+		
+		break;
+	}
 	//std::cout << "MOUSEBUTTONDOWN event: ";
 	//switch ( e.button )
 	//{

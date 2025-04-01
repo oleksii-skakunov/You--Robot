@@ -2,7 +2,7 @@
 #include "BulletManager.h"
 
 BulletManager::BulletManager():
-	m_BulletTexture{"bullet.png"},
+	m_BulletTexture{"bullet1.png"},
 	m_Bullets{}
 {
 }
@@ -32,15 +32,23 @@ void BulletManager::Update(float elapsedSec)
 	m_Bullets.erase(std::remove(m_Bullets.begin(), m_Bullets.end(), nullptr), m_Bullets.end());
 }
 
-void BulletManager::AddBullet(int bulletType, const Vector2f& startPos, float angle, int team)
+void BulletManager::AddBullet(int bulletType, const Vector2f& startPos, const Vector2f& endPos, int team)
 {
 	Type l_bulletType = static_cast<Type>(bulletType);
+	float angle{ float(atan(double((endPos.x - startPos.x) / (endPos.y - startPos.y)))) * 57.29f };
 	switch (l_bulletType)
 	{
 	case BulletManager::Type::Bullet:
-		m_Bullets.push_back( new Bullet{ 30.f, 1, startPos, 200.f, &m_BulletTexture, angle, team});
+		m_Bullets.push_back(new Bullet{ 5.f, 1, startPos, 200.f, &m_BulletTexture, angle, team });
 		break;
 	default:
 		break;
 	}
 }
+
+void BulletManager::DeleteAll()
+{
+	m_Bullets.clear();
+}
+
+

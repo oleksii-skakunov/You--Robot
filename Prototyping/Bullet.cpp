@@ -4,15 +4,17 @@
 
 
 Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, float velocity, const Texture* pTexture, float angle, int team):
+	m_Lifetime{ 0 },
 	m_Traveltime{ traveltime },
 	m_Damage{ damage },
 	m_Pos{ startPos },
 	m_Velocity{ velocity },
 	m_pTexture{ pTexture },
-	m_Angle{ angle },
+	//m_Angle{ angle }, bullet expects angle in radians but we give it in degrees, fix
+	// also rewrite the update function so that we don't recalculate the velocityVector every frame
 	m_HasStopped{ 0 },
 	m_Team{static_cast<Team>(team)}
-{
+{ 
 }
 
 void Bullet::Draw() const

@@ -17,7 +17,7 @@ private:
 	const Texture* m_pTexture;
 	bool m_HasStopped;
 	enum class Team {
-		Company
+		Player
 	};
 	Team m_Team;
 };
