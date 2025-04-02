@@ -7,6 +7,7 @@ BulletManager::BulletManager():
 {
 }
 
+
 void BulletManager::Draw() const
 {
 	for (int i = 0; i < m_Bullets.size(); i++)
@@ -35,11 +36,13 @@ void BulletManager::Update(float elapsedSec)
 void BulletManager::AddBullet(int bulletType, const Vector2f& startPos, const Vector2f& endPos, int team)
 {
 	Type l_bulletType = static_cast<Type>(bulletType);
-	float angle{ float(atan(double((endPos.x - startPos.x) / (endPos.y - startPos.y)))) * 57.29f };
+	float angle{ float(atan2(double((endPos.y - startPos.y)),double((endPos.x - startPos.x)))) };
 	switch (l_bulletType)
 	{
 	case BulletManager::Type::Bullet:
-		m_Bullets.push_back(new Bullet{ 5.f, 1, startPos, 200.f, &m_BulletTexture, angle, team });
+		
+		
+		m_Bullets.push_back(new Bullet{ 5.f, 1, startPos, Vector2f{float(cos(double(angle)))*200.f,float(sin(double(angle))) * 200.f}, &m_BulletTexture, angle, team});
 		break;
 	default:
 		break;
@@ -50,5 +53,6 @@ void BulletManager::DeleteAll()
 {
 	m_Bullets.clear();
 }
+
 
 

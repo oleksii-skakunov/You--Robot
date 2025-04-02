@@ -3,14 +3,14 @@
 
 
 
-Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, float velocity, const Texture* pTexture, float angle, int team):
+Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, Vector2f velocityVector, const Texture* pTexture, float angle, int team):
 	m_Lifetime{ 0 },
 	m_Traveltime{ traveltime },
 	m_Damage{ damage },
 	m_Pos{ startPos },
-	m_Velocity{ velocity },
+	m_VelocityVector{ velocityVector },
 	m_pTexture{ pTexture },
-	//m_Angle{ angle }, bullet expects angle in radians but we give it in degrees, fix
+	m_Angle{ angle * 57.29f },
 	// also rewrite the update function so that we don't recalculate the velocityVector every frame
 	m_HasStopped{ 0 },
 	m_Team{static_cast<Team>(team)}
@@ -20,7 +20,7 @@ Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, float velo
 void Bullet::Draw() const
 {
 	glPushMatrix();
-	glTranslatef(-m_Pos.x, -m_Pos.y, 0);
+	glTranslatef(m_Pos.x, m_Pos.y, 0);
 	glRotatef(m_Angle + 90, 0, 0, 1); // COUNTERCLOCKWISE!!!
 	m_pTexture->Draw();
 	glPopMatrix();
@@ -34,9 +34,8 @@ void Bullet::Update(float elapsedSec)
 	}
 	else {
 		m_Lifetime += elapsedSec;
-		Vector2f velocityVector{ m_Velocity / float(cos(double(m_Angle))), float(tan(double(m_Angle))) * m_Velocity };
-		m_Pos.x += velocityVector.x * elapsedSec;
-		m_Pos.y += velocityVector.y * elapsedSec;
+		m_Pos.x += m_VelocityVector.x * elapsedSec;
+		m_Pos.y += m_VelocityVector.y * elapsedSec;
 	}
 }
 
