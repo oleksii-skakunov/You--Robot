@@ -2,6 +2,8 @@
 #include "BaseGame.h"
 #include "Player.h"
 #include "BulletManager.h"
+#include "NPCManager.h"
+#include "Team.h"
 class Game : public BaseGame
 {
 public:
@@ -33,4 +35,8 @@ private:
 	// MEMBERS
 	Player m_Player;
 	BulletManager m_BulletManager;
+	NPCManager m_NPCManager;
+	std::vector<std::vector<Vector2f>> m_VerticiesLevel;
+	std::vector<std::vector<Vector2f>> m_VerticiesTarget;
+	std::vector<std::vector<Vector2f>> m_VerticiesNonTarget;
 };

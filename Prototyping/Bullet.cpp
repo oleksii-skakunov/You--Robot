@@ -17,6 +17,10 @@ Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, Vector2f v
 { 
 }
 
+Bullet::~Bullet()
+{
+}
+
 void Bullet::Draw() const
 {
 	glPushMatrix();
@@ -26,8 +30,21 @@ void Bullet::Draw() const
 	glPopMatrix();
 }
 
-void Bullet::Update(float elapsedSec)
+void Bullet::Update(float elapsedSec, NPCManager& npcManager)
 {
+	Rectf l_BulletHitbox{ m_Pos.x, m_Pos.y, m_pTexture->GetWidth(), m_pTexture->GetHeight() };
+	for (int i = 0; i < npcManager.GetNPCVector().size(); i++)
+	{
+		if (l_BulletHitbox.left < npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width &&
+			l_BulletHitbox.left + l_BulletHitbox.width > npcManager.GetNPCVector()[i]->GetBounds().left &&
+			l_BulletHitbox.bottom < npcManager.GetNPCVector()[i]->GetBounds().bottom + npcManager.GetNPCVector()[i]->GetBounds().height &&
+			l_BulletHitbox.bottom + l_BulletHitbox.height > npcManager.GetNPCVector()[i]->GetBounds().bottom)
+		{
+			npcManager.GetNPCVector()[i]->AddHealth(m_Damage * -1);
+			m_HasStopped = 1;
+		}
+
+	}
 	if (m_Lifetime >= m_Traveltime)
 	{
 		m_HasStopped = 1;
@@ -37,6 +54,7 @@ void Bullet::Update(float elapsedSec)
 		m_Pos.x += m_VelocityVector.x * elapsedSec;
 		m_Pos.y += m_VelocityVector.y * elapsedSec;
 	}
+	
 }
 
 bool Bullet::HasStopped() const
