@@ -26,61 +26,70 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 {
 	if (m_Law_NoHarmNonTarget)
 	{
-		mousePos.x = (mousePos.x - GetCenterPos().x) * 20;
-		mousePos.y = (mousePos.y - GetCenterPos().y) * 20;
-		bool tempBool{ 1 };
-		while (tempBool)
+		float angle{ float(atan2(double((mousePos.y - GetCenterPos().y)),double((mousePos.x - GetCenterPos().x)))) };
+		for (float i = angle - 0.01; i <= angle + 0.01; i+=0.002) // goofy aah fix to make sure that we won't shoot sth that we shouldn't
+			// basically we check a cone instead of a line
 		{
-			for (int i = 0; i < nonTargetVector.size(); i++)
+			mousePos.x = mousePos.x + float(cos(double(angle))) * 9001;
+			mousePos.y = mousePos.y + float(sin(double(angle))) * 9001;
+			bool tempBool{ 1 };
+			while (tempBool)
 			{
-				if (not utils::Raycast(nonTargetVector[i], GetCenterPos(), mousePos, m_HitInfo))
+				for (int i = 0; i < nonTargetVector.size(); i++)
+				{
+					if (not utils::Raycast(nonTargetVector[i], GetCenterPos(), mousePos, m_HitInfo))
+					{
+						tempBool = false;
+					}
+					else
+					{
+						if (m_HitInfo.intersectPoint.x > GetCenterPos().x)
+						{
+							mousePos.x = m_HitInfo.intersectPoint.x - 1.f;
+						}
+						else
+						{
+							mousePos.x = m_HitInfo.intersectPoint.x + 1.f;
+						}
+						if (m_HitInfo.intersectPoint.y > GetCenterPos().y)
+						{
+							mousePos.y = m_HitInfo.intersectPoint.y - 1.f;
+						}
+						else
+						{
+							mousePos.y = m_HitInfo.intersectPoint.y + 1.f;
+						}
+					}
+				}
+				if (nonTargetVector.empty())
 				{
 					tempBool = false;
 				}
-				else
+			}
+			for (int i = 0; i < targetVector.size(); i++)
+			{
+				if (utils::Raycast(targetVector[i], GetCenterPos(), mousePos, m_HitInfo))
 				{
-					if (m_HitInfo.intersectPoint.x > GetCenterPos().x)
-					{
-						mousePos.x = m_HitInfo.intersectPoint.x - 1.f;
-					}
-					else
-					{
-						mousePos.x = m_HitInfo.intersectPoint.x + 1.f;
-					}
-					if (m_HitInfo.intersectPoint.y > GetCenterPos().y)
-					{
-						mousePos.y = m_HitInfo.intersectPoint.y - 1.f;
-					}
-					else
-					{
-						mousePos.y = m_HitInfo.intersectPoint.y + 1.f;
-					}
+					std::cout << "DEBUG: shot allowed - enemy was detected\n";
+					return true;
 				}
 			}
-			if (nonTargetVector.empty())
+			for (int i = 0; i < levelVector.size(); i++)
 			{
-				tempBool = false;
+				if (utils::Raycast(levelVector[i], GetCenterPos(), mousePos, m_HitInfo))
+				{
+					std::cout << "DEBUG: shot allowed - wall was detected\n";
+					return true;
+				}
 			}
+			std::cout << "DEBUG: shot denied\n";
+			return false;
 		}
-		for (int i = 0; i < targetVector.size(); i++)
-		{
-			if (utils::Raycast(targetVector[i], GetCenterPos(), mousePos, m_HitInfo))
-			{
-				return true;
-			}
-		}
-		for (int i = 0; i < levelVector.size(); i++)
-		{
-			if (utils::Raycast(levelVector[i], GetCenterPos(), mousePos, m_HitInfo))
-			{
-				return true;
-			}
-		}
-		std::cout << "DEBUG: shot denied\n";
-		return false;
+		
 	}
 	else
 	{
+		std::cout << "DEBUG: shot allowed - law disabled\n";
 		return true;
 	}
 	

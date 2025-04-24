@@ -2,6 +2,7 @@
 #include <vector>
 #include "Bullet.h"
 #include "NPCManager.h"
+#include "Team.h"
 class BulletManager
 {
 public:
@@ -9,7 +10,7 @@ public:
 	~BulletManager();
 	void Draw() const;
 	void Update(float elapsedSec, NPCManager& npcManager);
-	void AddBullet(int bulletType, const Vector2f& startPos, const Vector2f& endPos, int team);
+	void AddBullet(int bulletType, const Vector2f& startPos, const Vector2f& endPos, Team team);
 	void DeleteAll();
 private:
 	std::vector<Bullet*> m_Bullets;

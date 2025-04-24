@@ -165,6 +165,7 @@ xcopy "$(SolutionDir)Resources\*.*" "$(TargetDir)" /y /d /s</Command>
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="NPCManager.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +176,8 @@ xcopy "$(SolutionDir)Resources\*.*" "$(TargetDir)" /y /d /s</Command>
     <ClInclude Include="NPC.h" />
     <ClInclude Include="NPCManager.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Pickup.h" />
+    <ClInclude Include="PickupType.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Team.h" />
   </ItemGroup>

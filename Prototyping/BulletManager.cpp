@@ -38,16 +38,18 @@ void BulletManager::Update(float elapsedSec, NPCManager& npcManager)
 	m_Bullets.erase(std::remove(m_Bullets.begin(), m_Bullets.end(), nullptr), m_Bullets.end());
 }
 
-void BulletManager::AddBullet(int bulletType, const Vector2f& startPos, const Vector2f& endPos, int team)
+void BulletManager::AddBullet(int bulletType, const Vector2f& startPos, const Vector2f& endPos, Team team)
 {
 	Type l_bulletType = static_cast<Type>(bulletType);
 	float angle{ float(atan2(double((endPos.y - startPos.y)),double((endPos.x - startPos.x)))) };
+	Vector2f bulletStartPos{ startPos.x + float(cos(double(angle))) * 55, startPos.y + float(sin(double(angle))) * 55 }; // this makes it so that the bullets don't spawn inside the player
+	// bug - when inside a target, your bullets spawn outside of them
 	switch (l_bulletType)
 	{
 	case BulletManager::Type::Bullet:
 		
 		
-		m_Bullets.push_back(new Bullet{ 5.f, 1, startPos, Vector2f{float(cos(double(angle)))*1000.f,float(sin(double(angle))) * 1000.f}, &m_BulletTexture, angle, team});
+		m_Bullets.push_back(new Bullet{ 5.f, 1, bulletStartPos, Vector2f{float(cos(double(angle)))*800.f,float(sin(double(angle))) * 800.f}, &m_BulletTexture, angle, team});
 		break;
 	default:
 		break;

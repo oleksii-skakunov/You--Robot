@@ -19,7 +19,21 @@ NPC::NPC(Team team, Vector2f pos):
 
 void NPC::Draw() const
 {
-	//utils::DrawRect(m_Bounds);
+	switch (m_Team)
+	{
+	case Team::Neutral:
+		utils::SetColor(Color4f{ 1.f,1.f,1.f,1.f });
+		break;
+	case Team::NonTarget:
+		utils::SetColor(Color4f{ 0.f,0.f,1.f,1.f });
+		break;
+	case Team::Target:
+		utils::SetColor(Color4f{ 1.f,0.f,0.f,1.f });
+		break;
+	default:
+		break;
+	}
+	utils::FillRect(m_Bounds);
 }
 
 bool NPC::Shoot(Vector2f mousePos)

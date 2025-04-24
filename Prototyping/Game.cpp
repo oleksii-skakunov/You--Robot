@@ -64,6 +64,7 @@ void Game::Draw( ) const
 	ClearBackground( );
 	m_Player.Draw();
 	m_BulletManager.Draw();
+	m_NPCManager.Draw();
 	utils::SetColor(Color4f{ 1.f,1.f,1.f,1.f });
 	for (size_t i = 0; i < m_VerticiesLevel.size(); i++)
 	{
@@ -72,6 +73,7 @@ void Game::Draw( ) const
 			utils::DrawLine(m_VerticiesLevel[i][o], m_VerticiesLevel[i][(o + 1) % m_VerticiesLevel[i].size()]);
 		}
 	}
+	
 	// debug stuff
 	utils::SetColor(Color4f{ 1.f,0.f,0.f,1.f });
 	for (size_t i = 0; i < m_VerticiesTarget.size(); i++)
@@ -132,7 +134,7 @@ void Game::ProcessMouseDownEvent( const SDL_MouseButtonEvent& e )
 		m_NPCManager.UpdateVector(m_VerticiesNonTarget, Team::NonTarget);
 		if (m_Player.Shoot(Vector2f{ float(e.x), float(e.y) }, m_VerticiesTarget, m_VerticiesLevel, m_VerticiesNonTarget))
 		{
-			m_BulletManager.AddBullet(m_Player.GetBulletType(), m_Player.GetCenterPos(), Vector2f{ float(e.x), float(e.y) }, 0);
+			m_BulletManager.AddBullet(m_Player.GetBulletType(), m_Player.GetCenterPos(), Vector2f{ float(e.x), float(e.y) }, Team::Neutral);
 		}
 		
 		break;

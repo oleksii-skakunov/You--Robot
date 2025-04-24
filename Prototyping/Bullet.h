@@ -1,10 +1,11 @@
 #pragma once
 #include "Texture.h"
 #include "NPCManager.h"
+#include "Team.h"
 class Bullet
 {
 public:
-	Bullet(float traveltime, int damage, const Vector2f startPos, Vector2f velocityVector, const Texture* pTexture, float angle, int team);
+	Bullet(float traveltime, int damage, const Vector2f startPos, Vector2f velocityVector, const Texture* pTexture, float angle, Team team);
 	~Bullet();
 	void Draw() const;
 	void Update(float elapsedSec, NPCManager& npcManager);
@@ -18,11 +19,6 @@ private:
 	Vector2f m_VelocityVector;
 	const Texture* m_pTexture;
 	bool m_HasStopped;
-	enum class Team {
-		Player,
-		Company,
-		Rebel
-	};
 	Team m_Team;
 };
 

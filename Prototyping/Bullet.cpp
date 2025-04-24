@@ -3,7 +3,7 @@
 
 
 
-Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, Vector2f velocityVector, const Texture* pTexture, float angle, int team):
+Bullet::Bullet(float traveltime, int damage, const Vector2f startPos, Vector2f velocityVector, const Texture* pTexture, float angle, Team team):
 	m_Lifetime{ 0 },
 	m_Traveltime{ traveltime },
 	m_Damage{ damage },
@@ -32,7 +32,7 @@ void Bullet::Draw() const
 
 void Bullet::Update(float elapsedSec, NPCManager& npcManager)
 {
-	Rectf l_BulletHitbox{ m_Pos.x, m_Pos.y, m_pTexture->GetWidth(), m_pTexture->GetHeight() };
+	Rectf l_BulletHitbox{ m_Pos.x, m_Pos.y, 1.f, 1.f };
 	for (int i = 0; i < npcManager.GetNPCVector().size(); i++)
 	{
 		if (l_BulletHitbox.left < npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width &&
