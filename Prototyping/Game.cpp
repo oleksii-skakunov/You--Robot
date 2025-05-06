@@ -7,7 +7,8 @@
 // you can earn defective points by breaking the laws yourself, but then you get a shit ton of debufs
 Game::Game( const Window& window ) 
 	:BaseGame{ window },
-	m_Player{}
+	m_Player{},
+	m_HudManager(GetViewPort(), m_Player.GetHealth())
 {
 	Initialize();
 }
@@ -36,8 +37,15 @@ void Game::Cleanup( )
 
 void Game::Update( float elapsedSec )
 {
-	m_BulletManager.Update(elapsedSec, m_NPCManager);
-	m_NPCManager.Update(elapsedSec);
+	m_BulletManager.Update(elapsedSec, m_NPCManager, m_Player, m_HudManager);
+	m_HudManager.UpdateHealth(elapsedSec, 0);
+	for (int i = 0; i < m_NPCManager.GetNPCVector().size(); i++)
+	{
+		if (m_NPCManager.Shoot(m_Player.GetCenterPos(), i)) {
+			m_BulletManager.AddBullet(m_Player.GetBulletType(), m_NPCManager.GetNPCVector()[i]->GetPos(), m_Player.GetCenterPos(), Team::Target);
+		}
+	}
+	m_NPCManager.Update(elapsedSec, m_Player.GetCenterPos());
 	// Check keyboard state
 	const Uint8 *pStates = SDL_GetKeyboardState( nullptr );
 	if ( pStates[SDL_SCANCODE_W] )
@@ -56,6 +64,7 @@ void Game::Update( float elapsedSec )
 	{
 		m_Player.Update(Vector2f{ 250.f, 0.f }, elapsedSec);
 	}
+	m_Player.Update(Vector2f{ 0.f, 0.f }, elapsedSec);
 
 }
 
@@ -65,6 +74,7 @@ void Game::Draw( ) const
 	m_Player.Draw();
 	m_BulletManager.Draw();
 	m_NPCManager.Draw();
+	m_HudManager.DrawHealth();
 	utils::SetColor(Color4f{ 1.f,1.f,1.f,1.f });
 	for (size_t i = 0; i < m_VerticiesLevel.size(); i++)
 	{
@@ -74,23 +84,7 @@ void Game::Draw( ) const
 		}
 	}
 	
-	// debug stuff
-	utils::SetColor(Color4f{ 1.f,0.f,0.f,1.f });
-	for (size_t i = 0; i < m_VerticiesTarget.size(); i++)
-	{
-		for (size_t o = 0; o < m_VerticiesTarget[i].size(); o++)
-		{
-			utils::DrawLine(m_VerticiesTarget[i][o], m_VerticiesTarget[i][(o + 1)% m_VerticiesTarget[i].size()]);
-		}
-	}
-	utils::SetColor(Color4f{ 0.f,0.f,1.f,1.f });
-	for (size_t i = 0; i < m_VerticiesNonTarget.size(); i++)
-	{
-		for (size_t o = 0; o < m_VerticiesNonTarget[i].size(); o++)
-		{
-			utils::DrawLine(m_VerticiesNonTarget[i][o], m_VerticiesNonTarget[i][(o + 1) % m_VerticiesNonTarget[i].size()]);
-		}
-	}
+
 }
 
 void Game::ProcessKeyDownEvent( const SDL_KeyboardEvent & e )

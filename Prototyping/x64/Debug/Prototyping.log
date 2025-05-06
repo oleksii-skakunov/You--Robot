@@ -1,7 +1,4 @@
 ﻿  Player.cpp
-C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Player.cpp(30,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Player.cpp(30,54): warning C4305: '+=': truncation from 'double' to 'float'
-C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Player.cpp(106,1): warning C4715: 'Player::Shoot': not all control paths return a value
   Prototyping.vcxproj -> C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\x64\Debug\Prototyping.exe
   0 File(s) copied
   0 File(s) copied

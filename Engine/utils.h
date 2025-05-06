@@ -47,6 +47,8 @@ namespace utils
 	void DrawPolygon( const Vector2f* pVertices, size_t nrVertices, bool closed = true, float lineWidth = 1.0f );
 	void FillPolygon( const std::vector<Vector2f>& vertices);
 	void FillPolygon( const Vector2f* pVertices, size_t nrVertices);
+
+	Vector2f RotateVector( const Vector2f& vector, float degrees);
 #pragma endregion OpenGLDrawFunctionality
 
 #pragma region CollisionFunctionality

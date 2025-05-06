@@ -4,16 +4,20 @@
 
 Player::Player() :
 	m_Health{ 10 },
-	m_Texture{ "robot_3Dblue.png" },
+	m_Spritesheet{ "PlayerSpritesheet.png" },
 	m_CurrentBulletType{ 0 },
-	m_Bounds{ 0.f,0.f, 50.f, 50.f },
-	m_Law_NoHarmNonTarget{ 1 }
+	m_Bounds{ 0.f,0.f, 17.f, 16.f },
+	m_Law_NoHarmNonTarget{ 1 },
+	m_State{State::Idle},
+	m_FrameTimer{1.f/30.f},
+	m_CurrentFrameTime{0.f},
+	m_CurrentFrame{ 0.f, 52.f, 17.f, 16.f }
 {
 }
 
 void Player::Draw() const
 {
-	m_Texture.Draw(Rectf{m_Bounds.left, m_Bounds.bottom, 50.f, 50.f});
+	m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
 }
 
 void Player::DebugDraw() const
@@ -27,7 +31,7 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 	if (m_Law_NoHarmNonTarget)
 	{
 		float angle{ float(atan2(double((mousePos.y - GetCenterPos().y)),double((mousePos.x - GetCenterPos().x)))) };
-		for (float i = angle - 0.01; i <= angle + 0.01; i+=0.002) // goofy aah fix to make sure that we won't shoot sth that we shouldn't
+		for (float i = angle - 0.01f; i <= angle + 0.01f; i+=0.002f) // goofy aah fix to make sure that we won't shoot sth that we shouldn't
 			// basically we check a cone instead of a line
 		{
 			mousePos.x = mousePos.x + float(cos(double(angle))) * 9001;
@@ -82,10 +86,10 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 					return true;
 				}
 			}
-			std::cout << "DEBUG: shot denied\n";
-			return false;
+			
 		}
-		
+		std::cout << "DEBUG: shot denied\n";
+		return false;
 	}
 	else
 	{
@@ -110,13 +114,30 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 
 void Player::Update(Vector2f velocity, float elapsedSec)
 {
-
+	m_CurrentFrameTime += elapsedSec;
+	if (m_CurrentFrameTime >= m_FrameTimer)
+	{
+		NextFrame();
+	}
+	if (velocity.x != 0 and velocity.y != 0)
+	{
+		m_State = State::Idle;
+	}
+	else
+	{
+		//m_State = State::Walk;
+	}
 	m_Bounds.left += velocity.x * elapsedSec; // move player
 	m_Bounds.bottom += velocity.y * elapsedSec; // move player
-	//Vector2f BOTTOMLEFT{ m_Bounds.left, m_Bounds.bottom }; // create points to be used later
-	//Vector2f BOTTOMRIGHT{ m_Bounds.left + m_Bounds.width, m_Bounds.bottom };
-	//Vector2f UPLEFT{ m_Bounds.left, m_Bounds.bottom + m_Bounds.height };
-	//Vector2f UPRIGHT{ m_Bounds.left + m_Bounds.width, m_Bounds.bottom + m_Bounds.height };
+	if (m_Health <= 0)
+	{
+		std::cout << "DEBUG: Player is dead";
+		m_Health += 99999; //for debug purposes
+	}
+	Vector2f BOTTOMLEFT{ m_Bounds.left, m_Bounds.bottom }; // create points to be used later
+	Vector2f BOTTOMRIGHT{ m_Bounds.left + m_Bounds.width, m_Bounds.bottom };
+	Vector2f UPLEFT{ m_Bounds.left, m_Bounds.bottom + m_Bounds.height };
+	Vector2f UPRIGHT{ m_Bounds.left + m_Bounds.width, m_Bounds.bottom + m_Bounds.height };
 	//for (size_t i = 0; i < vertices.size(); i++)
 	//{
 	//	if (utils::Raycast(vertices[i], Vector2f{ BOTTOMLEFT.x, BOTTOMLEFT.y + 1 }, Vector2f{ BOTTOMRIGHT.x, BOTTOMRIGHT.y + 1 }, m_HitInfo) or // if horizonal lines between points defined above collide with any other lines...
@@ -145,6 +166,75 @@ void Player::Update(Vector2f velocity, float elapsedSec)
 	//{
 	//	m_Velocity.x = 0; // reset horizontal velocity to avoid sliding and other issues caused by this
 	//}
+}
+
+void Player::NextFrame()
+{
+	switch (m_State)
+	{
+	case Player::State::Idle:
+		if (m_CurrentFrame.bottom == 52.f)
+		{
+			//m_CurrentFrame.left = float((int(m_CurrentFrame.left) + 18) % (472 - 18));
+
+		}
+		else
+		{
+			m_CurrentFrame = Rectf{ 0.f, 52.f, 17.f, 16.f };
+		}
+		break;
+	case Player::State::Walk:
+		//if (m_CurrentFrame.bottom == 34.f)
+		//{
+		//	m_CurrentFrame.left = (int(m_CurrentFrame.left) + 15) % (93 - 16);
+		//}
+		//else
+		//{
+		//	m_CurrentFrame = Rectf{ 0.f, 34.f, 15.f, 17.f };
+		//}
+		//break;
+	case Player::State::Hurt:
+		//if (m_CurrentFrame.bottom == 16.f)
+		//{
+		//	if (m_CurrentFrame.left == 19.f)
+		//	{
+		//		m_CurrentFrame = Rectf{ 0.f, 52.f, 17.f, 16.f };
+		//		m_State = State::Idle;
+		//	}
+		//	else
+		//	{
+		//		m_CurrentFrame.left = 19.f;
+		//	}
+		//	
+		//}
+		//else
+		//{
+		//	m_CurrentFrame = Rectf{ 0.f, 16.f, 15.f, 17.f };
+		//}
+		break;
+	case Player::State::Dead:
+		//if (m_CurrentFrame.bottom == 1.f)
+		//{
+		//	if (m_CurrentFrame.left == 18.f)
+		//	{
+		//		m_CurrentFrame = Rectf{ 36.f, 1.f, 17.f, 14.f };
+		//	}
+		//	else if (m_CurrentFrame.left == 36.f)
+		//	{
+		//		m_CurrentFrame = Rectf{ 36.f, 1.f, 17.f, 14.f };
+		//	}
+		//	else {
+		//		m_CurrentFrame = Rectf{ 18.f, 1.f, 17.f, 14.f };
+		//	}
+		//}
+		//else
+		//{
+		//	m_CurrentFrame = Rectf{ 0.f, 1.f, 17.f, 14.f };
+		//}
+		break;
+	default:
+		break;
+	}
 }
 
 int Player::GetBulletType()
@@ -178,4 +268,14 @@ void Player::DebugSetLaw()
 	{
 		std::cout << "DEBUG: NoHarmNonTarget Law disabled" << std::endl;
 	}
+}
+
+void Player::SetHealth(int delta)
+{
+	m_Health += delta;
+}
+
+int Player::GetHealth()
+{
+	return m_Health;
 }

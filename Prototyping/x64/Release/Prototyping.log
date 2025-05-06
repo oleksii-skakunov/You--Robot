@@ -1,0 +1,8 @@
+﻿  NPC.cpp
+LINK : error C4727: PCH named c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\prototyping.pch with same timestamp found in c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\bulletmanager.obj and c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\bullet.obj.  Using first PCH.
+LINK : error C4727: PCH named c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\prototyping.pch with same timestamp found in c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\pickup.obj and c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\pch.obj.  Using first PCH.
+LINK : error C4727: PCH named c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\prototyping.pch with same timestamp found in c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\player.obj and c:\dae\visual studio\gameplay scripting\you--robot\prototyping\x64\release\npcmanager.obj.  Using first PCH.
+  Generating code
+  Previous IOBJ not found, fall back to full compilation.
+  All 562 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+LINK : fatal error LNK1257: code generation failed

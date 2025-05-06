@@ -30,21 +30,43 @@ void Bullet::Draw() const
 	glPopMatrix();
 }
 
-void Bullet::Update(float elapsedSec, NPCManager& npcManager)
+void Bullet::Update(float elapsedSec, NPCManager& npcManager, Player& player, HudManager& hudManager)
 {
 	Rectf l_BulletHitbox{ m_Pos.x, m_Pos.y, 1.f, 1.f };
-	for (int i = 0; i < npcManager.GetNPCVector().size(); i++)
+	switch (m_Team)
 	{
-		if (l_BulletHitbox.left < npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width &&
-			l_BulletHitbox.left + l_BulletHitbox.width > npcManager.GetNPCVector()[i]->GetBounds().left &&
-			l_BulletHitbox.bottom < npcManager.GetNPCVector()[i]->GetBounds().bottom + npcManager.GetNPCVector()[i]->GetBounds().height &&
-			l_BulletHitbox.bottom + l_BulletHitbox.height > npcManager.GetNPCVector()[i]->GetBounds().bottom)
+	case Team::Neutral:
+		for (int i = 0; i < npcManager.GetNPCVector().size(); i++)
 		{
-			npcManager.GetNPCVector()[i]->AddHealth(m_Damage * -1);
+			if (l_BulletHitbox.left < npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width &&
+				l_BulletHitbox.left + l_BulletHitbox.width > npcManager.GetNPCVector()[i]->GetBounds().left &&
+				l_BulletHitbox.bottom < npcManager.GetNPCVector()[i]->GetBounds().bottom + npcManager.GetNPCVector()[i]->GetBounds().height &&
+				l_BulletHitbox.bottom + l_BulletHitbox.height > npcManager.GetNPCVector()[i]->GetBounds().bottom)
+			{
+				npcManager.GetNPCVector()[i]->AddHealth(m_Damage * -1);
+				m_HasStopped = 1;
+			}
+
+		}
+		break;
+	case Team::NonTarget:
+		break;
+	case Team::Target:
+		
+		if (l_BulletHitbox.left < player.GetBounds().left + player.GetBounds().width &&
+			l_BulletHitbox.left + l_BulletHitbox.width > player.GetBounds().left &&
+			l_BulletHitbox.bottom < player.GetBounds().bottom + player.GetBounds().height &&
+			l_BulletHitbox.bottom + l_BulletHitbox.height > player.GetBounds().bottom)
+		{
+			player.SetHealth(m_Damage * - 1);
+			hudManager.UpdateHealth(0.f, m_Damage * -1);
 			m_HasStopped = 1;
 		}
-
+		break;
+	default:
+		break;
 	}
+	
 	if (m_Lifetime >= m_Traveltime)
 	{
 		m_HasStopped = 1;

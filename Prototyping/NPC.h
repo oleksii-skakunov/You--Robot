@@ -2,13 +2,14 @@
 #include "Texture.h"
 #include "utils.h"
 #include "Team.h"
+#include "Action.h"
 class NPC
 {
 public:
 	NPC();
 	NPC(Team team, Vector2f pos);
 	void Draw() const;
-	bool Shoot(Vector2f mousePos);
+	bool Shoot(Vector2f targetPos);
 	void Update(Vector2f velocity, float elapsedSec);
 	int GetBulletType();
 	Vector2f GetPos();
@@ -21,6 +22,11 @@ private:
 	Rectf m_Bounds;
 	int m_CurrentBulletType;
 	Team m_Team;
+	Action m_CurrentAction;
+	float m_MaxMoveTime;
+	float m_CurrentMoveTime;
+	float m_MaxReloadTime;
+	float m_CurrentReloadTime;
 };
 
 

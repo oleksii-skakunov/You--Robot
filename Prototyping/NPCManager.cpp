@@ -18,7 +18,7 @@ void NPCManager::Draw() const
 	}
 }
 
-void NPCManager::Update(float elapsedSec)
+void NPCManager::Update(float elapsedSec, Vector2f targetPos)
 {
 	for (int i = 0; i < m_NPCs.size(); i++)
 	{
@@ -29,10 +29,15 @@ void NPCManager::Update(float elapsedSec)
 		}
 		else
 		{
-			//m_NPCs[i]->Update(elapsedSec);
+			m_NPCs[i]->Update(targetPos, elapsedSec);
 		}
 	}
 	m_NPCs.erase(std::remove(m_NPCs.begin(), m_NPCs.end(), nullptr), m_NPCs.end());
+}
+
+bool NPCManager::Shoot(Vector2f targetPos, int i)
+{
+	return m_NPCs[i]->Shoot(targetPos);
 }
 
 void NPCManager::AddNPC(int team, const Vector2f& addPos, std::vector<std::vector<Vector2f>>& targetVector)

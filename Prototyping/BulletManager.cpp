@@ -21,7 +21,7 @@ void BulletManager::Draw() const
 	}
 }
 
-void BulletManager::Update(float elapsedSec, NPCManager& npcManager)
+void BulletManager::Update(float elapsedSec, NPCManager& npcManager, Player& player, HudManager& hudManager)
 {
 	for (int i = 0; i < m_Bullets.size(); i++)
 	{
@@ -32,7 +32,7 @@ void BulletManager::Update(float elapsedSec, NPCManager& npcManager)
 		}
 		else
 		{
-			m_Bullets[i]->Update(elapsedSec, npcManager);
+			m_Bullets[i]->Update(elapsedSec, npcManager, player, hudManager);
 		}
 	}
 	m_Bullets.erase(std::remove(m_Bullets.begin(), m_Bullets.end(), nullptr), m_Bullets.end());
@@ -49,7 +49,10 @@ void BulletManager::AddBullet(int bulletType, const Vector2f& startPos, const Ve
 	case BulletManager::Type::Bullet:
 		
 		
-		m_Bullets.push_back(new Bullet{ 5.f, 1, bulletStartPos, Vector2f{float(cos(double(angle)))*800.f,float(sin(double(angle))) * 800.f}, &m_BulletTexture, angle, team});
+		m_Bullets.push_back(new Bullet{ 5.f, 4, bulletStartPos, Vector2f{float(cos(double(angle)))*600.f,float(sin(double(angle))) * 600.f}, &m_BulletTexture, angle, team});
+		break;
+	case BulletManager::Type::EnemyBullet:
+		m_Bullets.push_back(new Bullet{ 5.f, 4, bulletStartPos, Vector2f{float(cos(double(angle))) * 300.f,float(sin(double(angle))) * 300.f}, &m_BulletTexture, angle, team });
 		break;
 	default:
 		break;

@@ -4,6 +4,7 @@
 #include "BulletManager.h"
 #include "NPCManager.h"
 #include "Team.h"
+#include "HudManager.h"
 class Game : public BaseGame
 {
 public:
@@ -36,6 +37,7 @@ private:
 	Player m_Player;
 	BulletManager m_BulletManager;
 	NPCManager m_NPCManager;
+	HudManager m_HudManager;
 	std::vector<std::vector<Vector2f>> m_VerticiesLevel;
 	std::vector<std::vector<Vector2f>> m_VerticiesTarget;
 	std::vector<std::vector<Vector2f>> m_VerticiesNonTarget;

@@ -275,6 +275,15 @@ void utils::FillPolygon( const Vector2f *pVertices, size_t nrVertices )
 	}
 	glEnd( );
 }
+
+Vector2f utils::RotateVector( const Vector2f& vector, float degrees) {
+	float radians = degrees * float(M_PI) / 180.f;
+	float cos_theta = std::cos(radians);
+	float sin_theta = std::sin(radians);
+	float x = vector.x * cos_theta - vector.y * sin_theta;
+	float y = vector.x * sin_theta + vector.y * cos_theta;
+	return Vector2f{ x, y };
+}
 #pragma endregion OpenGLDrawFunctionality
 
 #pragma region CollisionFunctionality
