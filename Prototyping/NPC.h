@@ -10,7 +10,7 @@ public:
 	NPC(Team team, Vector2f pos);
 	void Draw() const;
 	bool Shoot(Vector2f targetPos);
-	void Update(Vector2f velocity, float elapsedSec);
+	void Update(Vector2f velocity, float elapsedSec, std::vector<std::vector<Vector2f>> levelVerticies);
 	int GetBulletType();
 	Vector2f GetPos();
 	Rectf GetBounds();

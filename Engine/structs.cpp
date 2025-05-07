@@ -29,6 +29,14 @@ Rectf::Rectf( float left, float bottom, float width, float height )
 {
 }
 
+Rectf::Rectf(Vector2f p1, Vector2f p2):
+	left(p1.x),
+	bottom(p1.y),
+	width(p2.x - p1.x),
+	height(p2.y - p1.y)
+{
+}
+
 //-----------------------------------------------------------------
 // Color4f Constructors
 //-----------------------------------------------------------------

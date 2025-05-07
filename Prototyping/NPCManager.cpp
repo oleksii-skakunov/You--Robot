@@ -18,7 +18,7 @@ void NPCManager::Draw() const
 	}
 }
 
-void NPCManager::Update(float elapsedSec, Vector2f targetPos)
+void NPCManager::Update(float elapsedSec, Vector2f targetPos, std::vector<std::vector<Vector2f>> levelVerticies)
 {
 	for (int i = 0; i < m_NPCs.size(); i++)
 	{
@@ -29,7 +29,7 @@ void NPCManager::Update(float elapsedSec, Vector2f targetPos)
 		}
 		else
 		{
-			m_NPCs[i]->Update(targetPos, elapsedSec);
+			m_NPCs[i]->Update(targetPos, elapsedSec, levelVerticies);
 		}
 	}
 	m_NPCs.erase(std::remove(m_NPCs.begin(), m_NPCs.end(), nullptr), m_NPCs.end());
@@ -80,7 +80,7 @@ void NPCManager::DeleteAll()
 	m_NPCs.clear();
 }
 
-std::vector<NPC*> NPCManager::GetNPCVector()
+const std::vector<NPC*>& NPCManager::GetNPCVector() const
 {
 	return m_NPCs;
 }

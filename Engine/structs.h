@@ -19,6 +19,7 @@ struct Rectf
 {
 	Rectf( );
 	explicit Rectf( float left, float bottom, float width, float height );
+	explicit Rectf( Vector2f p1, Vector2f p2 );
 	
 	float left;
 	float bottom;

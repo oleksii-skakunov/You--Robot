@@ -1,6 +1,7 @@
 #pragma once
 #include "HudObject.h"
 #include "HudHealth.h"
+#include "iostream"
 class HudManager
 {
 public:

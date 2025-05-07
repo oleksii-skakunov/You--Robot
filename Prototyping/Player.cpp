@@ -6,18 +6,23 @@ Player::Player() :
 	m_Health{ 10 },
 	m_Spritesheet{ "PlayerSpritesheet.png" },
 	m_CurrentBulletType{ 0 },
-	m_Bounds{ 0.f,0.f, 17.f, 16.f },
+	m_Bounds{ 100.f,100.f, 17.f * 2.5, 16.f * 2.5 },
 	m_Law_NoHarmNonTarget{ 1 },
 	m_State{State::Idle},
-	m_FrameTimer{1.f/30.f},
+	m_FrameTimer{1.f/24.f},
 	m_CurrentFrameTime{0.f},
-	m_CurrentFrame{ 0.f, 52.f, 17.f, 16.f }
+	m_CurrentFrame{ 0.f, 0.f, 17.f, 16.f },
+	m_IsDead{0},
+	m_IsVisible{true}
 {
 }
 
 void Player::Draw() const
 {
-	m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
+	if (m_IsVisible)
+	{
+		m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
+	}
 }
 
 void Player::DebugDraw() const
@@ -28,74 +33,83 @@ void Player::DebugDraw() const
 
 bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetVector, std::vector<std::vector<Vector2f>> levelVector, std::vector<std::vector<Vector2f>> nonTargetVector)
 {
-	if (m_Law_NoHarmNonTarget)
+	if (not m_IsDead)
 	{
-		float angle{ float(atan2(double((mousePos.y - GetCenterPos().y)),double((mousePos.x - GetCenterPos().x)))) };
-		for (float i = angle - 0.01f; i <= angle + 0.01f; i+=0.002f) // goofy aah fix to make sure that we won't shoot sth that we shouldn't
-			// basically we check a cone instead of a line
+		if (m_Law_NoHarmNonTarget)
 		{
-			mousePos.x = mousePos.x + float(cos(double(angle))) * 9001;
-			mousePos.y = mousePos.y + float(sin(double(angle))) * 9001;
-			bool tempBool{ 1 };
-			while (tempBool)
+			float angle{ float(atan2(double((mousePos.y - GetCenterPos().y)),double((mousePos.x - GetCenterPos().x)))) };
+			for (float i = angle - 0.01f; i <= angle + 0.01f; i += 0.002f) // goofy aah fix to make sure that we won't shoot sth that we shouldn't
+				// basically we check a cone instead of a line
 			{
-				for (int i = 0; i < nonTargetVector.size(); i++)
+				mousePos.x = mousePos.x + float(cos(double(angle))) * 9001;
+				mousePos.y = mousePos.y + float(sin(double(angle))) * 9001;
+				bool tempBool{ 1 };
+				while (tempBool)
 				{
-					if (not utils::Raycast(nonTargetVector[i], GetCenterPos(), mousePos, m_HitInfo))
+					for (int i = 0; i < nonTargetVector.size(); i++)
+					{
+						if (not utils::Raycast(nonTargetVector[i], GetCenterPos(), mousePos, m_HitInfo))
+						{
+							tempBool = false;
+						}
+						else
+						{
+							if (m_HitInfo.intersectPoint.x > GetCenterPos().x)
+							{
+								mousePos.x = m_HitInfo.intersectPoint.x - 1.f;
+							}
+							else
+							{
+								mousePos.x = m_HitInfo.intersectPoint.x + 1.f;
+							}
+							if (m_HitInfo.intersectPoint.y > GetCenterPos().y)
+							{
+								mousePos.y = m_HitInfo.intersectPoint.y - 1.f;
+							}
+							else
+							{
+								mousePos.y = m_HitInfo.intersectPoint.y + 1.f;
+							}
+						}
+					}
+					if (nonTargetVector.empty())
 					{
 						tempBool = false;
 					}
-					else
+				}
+				for (int i = 0; i < targetVector.size(); i++)
+				{
+					if (utils::Raycast(targetVector[i], GetCenterPos(), mousePos, m_HitInfo))
 					{
-						if (m_HitInfo.intersectPoint.x > GetCenterPos().x)
-						{
-							mousePos.x = m_HitInfo.intersectPoint.x - 1.f;
-						}
-						else
-						{
-							mousePos.x = m_HitInfo.intersectPoint.x + 1.f;
-						}
-						if (m_HitInfo.intersectPoint.y > GetCenterPos().y)
-						{
-							mousePos.y = m_HitInfo.intersectPoint.y - 1.f;
-						}
-						else
-						{
-							mousePos.y = m_HitInfo.intersectPoint.y + 1.f;
-						}
+						std::cout << "DEBUG: shot allowed - enemy was detected\n";
+						return true;
 					}
 				}
-				if (nonTargetVector.empty())
+				for (int i = 0; i < levelVector.size(); i++)
 				{
-					tempBool = false;
+					if (utils::Raycast(levelVector[i], GetCenterPos(), mousePos, m_HitInfo))
+					{
+						std::cout << "DEBUG: shot allowed - wall was detected\n";
+						return true;
+					}
 				}
+
 			}
-			for (int i = 0; i < targetVector.size(); i++)
-			{
-				if (utils::Raycast(targetVector[i], GetCenterPos(), mousePos, m_HitInfo))
-				{
-					std::cout << "DEBUG: shot allowed - enemy was detected\n";
-					return true;
-				}
-			}
-			for (int i = 0; i < levelVector.size(); i++)
-			{
-				if (utils::Raycast(levelVector[i], GetCenterPos(), mousePos, m_HitInfo))
-				{
-					std::cout << "DEBUG: shot allowed - wall was detected\n";
-					return true;
-				}
-			}
-			
+			std::cout << "DEBUG: shot denied - looking at nontarget\n";
+			return false;
 		}
-		std::cout << "DEBUG: shot denied\n";
-		return false;
+		else
+		{
+			std::cout << "DEBUG: shot allowed - law disabled\n";
+			return true;
+		}
 	}
 	else
 	{
-		std::cout << "DEBUG: shot allowed - law disabled\n";
-		return true;
+		std::cout << "DEBUG: shot denied - player is dead\n";
+		return false;
 	}
+
 	
 	
 
@@ -112,60 +126,111 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 
 
 
-void Player::Update(Vector2f velocity, float elapsedSec)
+void Player::Update(Vector2f velocity, float elapsedSec, std::vector<std::vector<Vector2f>> levelVerticies)
 {
+	if (!m_IsDead)
+	{
+		if (velocity.x == 0.f && velocity.y == 0.f)
+		{
+			m_State = State::Idle;
+		}
+		else
+		{
+			m_State = State::Walk;
+		}
+
+		// Calculate proposed movement
+		Vector2f proposedMovement = velocity * elapsedSec;
+		
+		// Try horizontal movement first
+		if (proposedMovement.x != 0)
+		{
+			Rectf newBounds = m_Bounds;
+			newBounds.left += proposedMovement.x;
+			
+			// Check if new position would cause collision
+			bool wouldCollide = false;
+			
+			// Get corners of the new position
+			Vector2f newBottomLeft{ newBounds.left, newBounds.bottom };
+			Vector2f newBottomRight{ newBounds.left + newBounds.width, newBounds.bottom };
+			Vector2f newTopLeft{ newBounds.left, newBounds.bottom + newBounds.height };
+			Vector2f newTopRight{ newBounds.left + newBounds.width, newBounds.bottom + newBounds.height };
+			
+			// Check each corner against all obstacles
+			for (const auto& obstacle : levelVerticies)
+			{
+				// Skip the level boundary
+				if (&obstacle == &levelVerticies[0]) continue;
+				
+				if (utils::IsPointInPolygon(newBottomLeft, obstacle) ||
+					utils::IsPointInPolygon(newBottomRight, obstacle) ||
+					utils::IsPointInPolygon(newTopLeft, obstacle) ||
+					utils::IsPointInPolygon(newTopRight, obstacle))
+				{
+					wouldCollide = true;
+					break;
+				}
+			}
+			
+			// If no collision, apply horizontal movement
+			if (!wouldCollide)
+			{
+				m_Bounds.left = newBounds.left;
+			}
+		}
+
+		// Then try vertical movement
+		if (proposedMovement.y != 0)
+		{
+			Rectf newBounds = m_Bounds;
+			newBounds.bottom += proposedMovement.y;
+			
+			// Check if new position would cause collision
+			bool wouldCollide = false;
+			
+			// Get corners of the new position
+			Vector2f newBottomLeft{ newBounds.left, newBounds.bottom };
+			Vector2f newBottomRight{ newBounds.left + newBounds.width, newBounds.bottom };
+			Vector2f newTopLeft{ newBounds.left, newBounds.bottom + newBounds.height };
+			Vector2f newTopRight{ newBounds.left + newBounds.width, newBounds.bottom + newBounds.height };
+			
+			// Check each corner against all obstacles
+			for (const auto& obstacle : levelVerticies)
+			{
+				// Skip the level boundary
+				if (&obstacle == &levelVerticies[0]) continue;
+				
+				if (utils::IsPointInPolygon(newBottomLeft, obstacle) ||
+					utils::IsPointInPolygon(newBottomRight, obstacle) ||
+					utils::IsPointInPolygon(newTopLeft, obstacle) ||
+					utils::IsPointInPolygon(newTopRight, obstacle))
+				{
+					wouldCollide = true;
+					break;
+				}
+			}
+			
+			// If no collision, apply vertical movement
+			if (!wouldCollide)
+			{
+				m_Bounds.bottom = newBounds.bottom;
+			}
+		}
+	}
+
 	m_CurrentFrameTime += elapsedSec;
 	if (m_CurrentFrameTime >= m_FrameTimer)
 	{
 		NextFrame();
+		m_CurrentFrameTime = 0;
 	}
-	if (velocity.x != 0 and velocity.y != 0)
-	{
-		m_State = State::Idle;
-	}
-	else
-	{
-		//m_State = State::Walk;
-	}
-	m_Bounds.left += velocity.x * elapsedSec; // move player
-	m_Bounds.bottom += velocity.y * elapsedSec; // move player
+	
 	if (m_Health <= 0)
 	{
-		std::cout << "DEBUG: Player is dead";
-		m_Health += 99999; //for debug purposes
+		m_IsDead = 1;
+		m_State = State::Dead;
 	}
-	Vector2f BOTTOMLEFT{ m_Bounds.left, m_Bounds.bottom }; // create points to be used later
-	Vector2f BOTTOMRIGHT{ m_Bounds.left + m_Bounds.width, m_Bounds.bottom };
-	Vector2f UPLEFT{ m_Bounds.left, m_Bounds.bottom + m_Bounds.height };
-	Vector2f UPRIGHT{ m_Bounds.left + m_Bounds.width, m_Bounds.bottom + m_Bounds.height };
-	//for (size_t i = 0; i < vertices.size(); i++)
-	//{
-	//	if (utils::Raycast(vertices[i], Vector2f{ BOTTOMLEFT.x, BOTTOMLEFT.y + 1 }, Vector2f{ BOTTOMRIGHT.x, BOTTOMRIGHT.y + 1 }, m_HitInfo) or // if horizonal lines between points defined above collide with any other lines...
-	//		utils::Raycast(vertices[i], Vector2f{ UPLEFT.x, UPLEFT.y - 1 }, Vector2f{ UPRIGHT.x, UPRIGHT.y - 1 }, m_HitInfo))
-	//	{
-	//		if (m_Velocity.x > 0) // check direction by looking at horizontal velocity
-	//		{
-	//			m_Bounds.left = m_HitInfo.intersectPoint.x - m_Bounds.width; // if player moves to the right, stick his right side to the point of intersection
-	//		}
-	//		else if (m_Velocity.x < 0) {
-	//			m_Bounds.left = m_HitInfo.intersectPoint.x; // otherwise stick his left side
-	//		}
-	//	}
-	//	if (utils::Raycast(vertices[i], Vector2f{ BOTTOMLEFT.x, BOTTOMLEFT.y + 1 }, Vector2f{ BOTTOMLEFT.x, BOTTOMLEFT.y - 1 * m_Velocity.y }, m_HitInfo) or
-	//		utils::Raycast(vertices[i], Vector2f{ BOTTOMRIGHT.x, BOTTOMRIGHT.y - 1 }, Vector2f{ BOTTOMRIGHT.x, BOTTOMRIGHT.y - 1 * m_Velocity.y }, m_HitInfo)) // check for floor
-	//	{
-	//		if (m_Velocity.y < 0) { // if there is floor below and we are falling,
-	//			m_Velocity.y = 0; // stop
-	//			m_Bounds.bottom = m_HitInfo.intersectPoint.y; // and land
-	//		}
-
-	//	}
-
-	//}
-	//if (m_Velocity.x != 0)
-	//{
-	//	m_Velocity.x = 0; // reset horizontal velocity to avoid sliding and other issues caused by this
-	//}
 }
 
 void Player::NextFrame()
@@ -173,64 +238,69 @@ void Player::NextFrame()
 	switch (m_State)
 	{
 	case Player::State::Idle:
-		if (m_CurrentFrame.bottom == 52.f)
+		if (m_CurrentFrame.bottom == 0.f)
 		{
-			//m_CurrentFrame.left = float((int(m_CurrentFrame.left) + 18) % (472 - 18));
+			m_CurrentFrame.left = float((int(m_CurrentFrame.left) + 18));
 
 		}
 		else
 		{
-			m_CurrentFrame = Rectf{ 0.f, 52.f, 17.f, 16.f };
+			m_CurrentFrame = Rectf{ 0.f, 0.f, 17.f, 16.f };
+			m_Bounds.width = m_CurrentFrame.width * 2.5;
+			m_Bounds.height = m_CurrentFrame.height * 2.5;
 		}
 		break;
 	case Player::State::Walk:
-		//if (m_CurrentFrame.bottom == 34.f)
-		//{
-		//	m_CurrentFrame.left = (int(m_CurrentFrame.left) + 15) % (93 - 16);
-		//}
-		//else
-		//{
-		//	m_CurrentFrame = Rectf{ 0.f, 34.f, 15.f, 17.f };
-		//}
-		//break;
+		if (m_CurrentFrame.bottom == 17.f)
+		{
+			m_CurrentFrame.left = (int(m_CurrentFrame.left) + 17) % (102);
+		}
+		else
+		{
+			m_CurrentFrame = Rectf{ 0.f, 17.f, 16.f, 17.f };
+			m_Bounds.width = m_CurrentFrame.width * 2.5;
+			m_Bounds.height = m_CurrentFrame.height * 2.5;
+		}
+		break;
 	case Player::State::Hurt:
-		//if (m_CurrentFrame.bottom == 16.f)
-		//{
-		//	if (m_CurrentFrame.left == 19.f)
-		//	{
-		//		m_CurrentFrame = Rectf{ 0.f, 52.f, 17.f, 16.f };
-		//		m_State = State::Idle;
-		//	}
-		//	else
-		//	{
-		//		m_CurrentFrame.left = 19.f;
-		//	}
-		//	
-		//}
-		//else
-		//{
-		//	m_CurrentFrame = Rectf{ 0.f, 16.f, 15.f, 17.f };
-		//}
+		// fix this, it doesn't work rn
+		if (m_CurrentFrame.bottom == 35.f)
+		{
+			if (m_CurrentFrame.left == 19.f)
+			{
+				m_CurrentFrame = Rectf{ 0.f, 0.f, 17.f, 16.f };
+				m_State = State::Idle;
+			}
+			else
+			{
+				m_CurrentFrame.left = 19.f;
+			}
+			
+		}
+		else
+		{
+			m_CurrentFrame = Rectf{ 0.f, 35.f, 18.f, 17.f };
+		}
 		break;
 	case Player::State::Dead:
-		//if (m_CurrentFrame.bottom == 1.f)
-		//{
-		//	if (m_CurrentFrame.left == 18.f)
-		//	{
-		//		m_CurrentFrame = Rectf{ 36.f, 1.f, 17.f, 14.f };
-		//	}
-		//	else if (m_CurrentFrame.left == 36.f)
-		//	{
-		//		m_CurrentFrame = Rectf{ 36.f, 1.f, 17.f, 14.f };
-		//	}
-		//	else {
-		//		m_CurrentFrame = Rectf{ 18.f, 1.f, 17.f, 14.f };
-		//	}
-		//}
-		//else
-		//{
-		//	m_CurrentFrame = Rectf{ 0.f, 1.f, 17.f, 14.f };
-		//}
+		if (m_CurrentFrame.bottom == 53.f)
+		{
+			if (m_CurrentFrame.left == 18.f)
+			{
+				m_CurrentFrame = Rectf{ 36.f, 53.f, 17.f, 14.f };
+			}
+			else if (m_CurrentFrame.left == 36.f)
+			{
+				m_CurrentFrame = Rectf{ 36.f, 53.f, 17.f, 14.f };
+			}
+			else {
+				m_CurrentFrame = Rectf{ 18.f, 53.f, 17.f, 14.f };
+			}
+		}
+		else
+		{
+			m_CurrentFrame = Rectf{ 0.f, 53.f, 17.f, 14.f };
+		}
 		break;
 	default:
 		break;
@@ -247,7 +317,7 @@ Vector2f Player::GetPos()
 	return Vector2f{ m_Bounds.left, m_Bounds.bottom };
 }
 
-Rectf Player::GetBounds()
+Rectf Player::GetBounds() const
 {
 	return m_Bounds;
 }
@@ -275,7 +345,35 @@ void Player::SetHealth(int delta)
 	m_Health += delta;
 }
 
-int Player::GetHealth()
+int Player::GetHealth() const
 {
 	return m_Health;
+}
+
+void Player::SetPosition(Vector2f newPos)
+{
+	m_Bounds.left = newPos.x - (m_Bounds.width / 2);
+	m_Bounds.bottom = newPos.y - (m_Bounds.height / 2);
+}
+
+void Player::SetVisible(bool isVisible)
+{
+	m_IsVisible = isVisible;
+	if (!isVisible)
+	{
+		// Move player off-screen when hiding
+		m_Bounds.left = -1000.f;
+		m_Bounds.bottom = -1000.f;
+	}
+}
+
+void Player::Reset()
+{
+	m_Health = 10;
+	m_IsDead = false;
+	m_State = State::Idle;
+	m_CurrentFrame = Rectf{ 0.f, 0.f, 17.f, 16.f };
+	m_CurrentFrameTime = 0.f;
+	m_IsVisible = false;
+	m_Bounds = Rectf{ 100.f, 100.f, 17.f * 2.5, 16.f * 2.5 };
 }

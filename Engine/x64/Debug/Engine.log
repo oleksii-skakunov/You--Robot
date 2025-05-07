@@ -1,2 +1,11 @@
-﻿  utils.cpp
+﻿  BaseGame.cpp
+  Matrix2x3.cpp
+  SoundEffect.cpp
+  SoundStream.cpp
+  structs.cpp
+  SVGParser.cpp
+  Texture.cpp
+  utils.cpp
+  Vector2f.cpp
+  Generating Code...
   Engine.vcxproj -> C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\x64\Debug\Engine.lib

@@ -1,7 +1,16 @@
-﻿  Player.cpp
+﻿  LINK : C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\x64\Debug\Prototyping.exe not found or not built by the last incremental link; performing full link
   Prototyping.vcxproj -> C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\x64\Debug\Prototyping.exe
-  0 File(s) copied
-  0 File(s) copied
-  0 File(s) copied
-  0 File(s) copied
-  0 File(s) copied
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLMain\SDL2-2.30.11\lib\x64\SDL2.dll
+  1 File(s) copied
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLImage\SDL2_image-2.8.4\lib\x64\SDL2_image.dll
+  1 File(s) copied
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLMixer\SDL2_mixer-2.8.0\lib\x64\SDL2_mixer.dll
+  1 File(s) copied
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLTtf\SDL2_ttf-2.24.0\lib\x64\SDL2_ttf.dll
+  1 File(s) copied
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\bullet1.png
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\Font.ttf
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\HudHealth.png
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\PlayerSpritesheet.png
+  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\Target.png
+  5 File(s) copied

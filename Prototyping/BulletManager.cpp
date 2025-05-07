@@ -21,7 +21,7 @@ void BulletManager::Draw() const
 	}
 }
 
-void BulletManager::Update(float elapsedSec, NPCManager& npcManager, Player& player, HudManager& hudManager)
+void BulletManager::Update(float elapsedSec, NPCManager& npcManager, Player& player, HudManager& hudManager, std::vector<std::vector<Vector2f>> levelVerticies)
 {
 	for (int i = 0; i < m_Bullets.size(); i++)
 	{
@@ -32,7 +32,7 @@ void BulletManager::Update(float elapsedSec, NPCManager& npcManager, Player& pla
 		}
 		else
 		{
-			m_Bullets[i]->Update(elapsedSec, npcManager, player, hudManager);
+			m_Bullets[i]->Update(elapsedSec, npcManager, player, hudManager, levelVerticies);
 		}
 	}
 	m_Bullets.erase(std::remove(m_Bullets.begin(), m_Bullets.end(), nullptr), m_Bullets.end());

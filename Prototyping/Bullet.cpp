@@ -30,12 +30,27 @@ void Bullet::Draw() const
 	glPopMatrix();
 }
 
-void Bullet::Update(float elapsedSec, NPCManager& npcManager, Player& player, HudManager& hudManager)
+void Bullet::Update(float elapsedSec, NPCManager& npcManager, Player& player, HudManager& hudManager, std::vector<std::vector<Vector2f>> levelVerticies)
 {
 	Rectf l_BulletHitbox{ m_Pos.x, m_Pos.y, 1.f, 1.f };
+	//std::vector<std::vector<Vector2f>> l_NPCVertices{};
+	//for (int i = 0; i < npcManager.GetNPCVector().size(); i++)
+	//{
+	//	l_NPCVertices.push_back(std::vector<Vector2f>{Vector2f{ npcManager.GetNPCVector()[i]->GetBounds().left, npcManager.GetNPCVector()[i]->GetBounds().bottom }});
+	//	l_NPCVertices[i].push_back(Vector2f{ npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width, npcManager.GetNPCVector()[i]->GetBounds().bottom });
+	//	l_NPCVertices[i].push_back(Vector2f{ npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width, npcManager.GetNPCVector()[i]->GetBounds().bottom + npcManager.GetNPCVector()[i]->GetBounds().height });
+	//	l_NPCVertices[i].push_back(Vector2f{ npcManager.GetNPCVector()[i]->GetBounds().left , npcManager.GetNPCVector()[i]->GetBounds().bottom + npcManager.GetNPCVector()[i]->GetBounds().height });
+
+
+	//}
+	utils::HitInfo l_HitInfo{};
+
+	
 	switch (m_Team)
 	{
 	case Team::Neutral:
+		
+		
 		for (int i = 0; i < npcManager.GetNPCVector().size(); i++)
 		{
 			if (l_BulletHitbox.left < npcManager.GetNPCVector()[i]->GetBounds().left + npcManager.GetNPCVector()[i]->GetBounds().width &&
@@ -66,7 +81,13 @@ void Bullet::Update(float elapsedSec, NPCManager& npcManager, Player& player, Hu
 	default:
 		break;
 	}
-	
+	for (int i = 0; i < levelVerticies.size(); i++)
+	{
+		if (utils::Raycast(levelVerticies[i], Vector2f{ l_BulletHitbox.left, l_BulletHitbox.bottom }, Vector2f{ l_BulletHitbox.left + m_VelocityVector.x * elapsedSec, l_BulletHitbox.bottom + m_VelocityVector.y * elapsedSec }, l_HitInfo))
+		{
+			m_HasStopped = 1;
+		}
+	}
 	if (m_Lifetime >= m_Traveltime)
 	{
 		m_HasStopped = 1;
@@ -82,4 +103,17 @@ void Bullet::Update(float elapsedSec, NPCManager& npcManager, Player& player, Hu
 bool Bullet::HasStopped() const
 {
 	return m_HasStopped;
+}
+
+bool Bullet::lineSegmentIntersect(Vector2f p1, Vector2f p2, Vector2f p3, Vector2f p4)
+{
+	float epsilon{ 1e-8 };
+	Vector2f directionVector1{ p1, p2 };
+	Vector2f directionVector2{ p3, p4 };
+	float denominator{ directionVector1.x * directionVector2.y - directionVector2.x * directionVector1.y };
+	if (denominator < epsilon)
+	{
+		return false;
+	}
+	return false;
 }
