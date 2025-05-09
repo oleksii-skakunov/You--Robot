@@ -60,6 +60,7 @@ void Bullet::Update(float elapsedSec, NPCManager& npcManager, Player& player, Hu
 			{
 				npcManager.GetNPCVector()[i]->AddHealth(m_Damage * -1);
 				m_HasStopped = 1;
+				hudManager.UpdateScore(10);
 			}
 
 		}

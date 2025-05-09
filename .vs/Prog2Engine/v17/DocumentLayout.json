@@ -3,60 +3,84 @@
   "WorkspaceRootPath": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPC.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Action.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Action.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPCManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPCManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudHealth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\BulletManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudScore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudScore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudScore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudScore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\BulletManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudHealth.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudHealth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPCManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Action.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Action.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPC.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPCManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\NPC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -75,24 +99,8 @@
       "RelativeMoniker": "D:0:0:{5ADAB721-CB6C-4EF5-89EB-20EC51A13CFC}|Engine\\Engine.vcxproj|solutionrelative:Engine\\structs.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudHealth.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|solutionrelative:Prototyping\\HudManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AD6B1DD-5AF4-4F44-9F04-FF1C1CDBF8BD}|Prototyping\\Prototyping.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Team.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -109,6 +117,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{5ADAB721-CB6C-4EF5-89EB-20EC51A13CFC}|Engine\\Engine.vcxproj|C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\ENGINE\\UTILS.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5ADAB721-CB6C-4EF5-89EB-20EC51A13CFC}|Engine\\Engine.vcxproj|solutionrelative:ENGINE\\UTILS.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,11 +129,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "Bullet.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Bullet.h",
               "RelativeDocumentMoniker": "Prototyping\\Bullet.h",
@@ -135,6 +146,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
@@ -143,149 +158,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NPC.cpp",
-              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.cpp",
-              "RelativeDocumentMoniker": "Prototyping\\NPC.cpp",
-              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.cpp",
-              "RelativeToolTip": "Prototyping\\NPC.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "HudScore.cpp",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudScore.cpp",
+              "RelativeDocumentMoniker": "Prototyping\\HudScore.cpp",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudScore.cpp",
+              "RelativeToolTip": "Prototyping\\HudScore.cpp",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-18T08:11:51.554Z"
+              "WhenOpened": "2025-05-08T15:35:20.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "HudScore.h",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudScore.h",
+              "RelativeDocumentMoniker": "Prototyping\\HudScore.h",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudScore.h",
+              "RelativeToolTip": "Prototyping\\HudScore.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-08T15:33:24.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.cpp",
               "RelativeDocumentMoniker": "Prototyping\\Game.cpp",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.cpp",
               "RelativeToolTip": "Prototyping\\Game.cpp",
-              "ViewState": "AgIAAJMBAAAAAAAAAAAYwKIBAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAANMBAAAAAAAAAAAtwOMBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-27T15:30:55.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "Bullet.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Bullet.cpp",
               "RelativeDocumentMoniker": "Prototyping\\Bullet.cpp",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Bullet.cpp",
               "RelativeToolTip": "Prototyping\\Bullet.cpp",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAtwG0AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwCAAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-27T16:04:32.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T16:04:32.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.cpp",
               "RelativeDocumentMoniker": "Prototyping\\Player.cpp",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.cpp",
               "RelativeToolTip": "Prototyping\\Player.cpp",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAowLAAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAtwHQBAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-27T15:36:17.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "NPCManager.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.h",
               "RelativeDocumentMoniker": "Prototyping\\NPCManager.h",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.h",
               "RelativeToolTip": "Prototyping\\NPCManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-23T07:53:29.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T07:53:29.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.h",
-              "RelativeDocumentMoniker": "Prototyping\\Player.h",
-              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.h",
-              "RelativeToolTip": "Prototyping\\Player.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-27T15:31:34.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 16,
               "Title": "NPC.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.h",
               "RelativeDocumentMoniker": "Prototyping\\NPC.h",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.h",
               "RelativeToolTip": "Prototyping\\NPC.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-13T14:50:05.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T14:50:05.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "HudHealth.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.h",
               "RelativeDocumentMoniker": "Prototyping\\HudHealth.h",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.h",
               "RelativeToolTip": "Prototyping\\HudHealth.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-05T13:34:39.317Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T13:34:39.317Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Game.h",
-              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.h",
-              "RelativeDocumentMoniker": "Prototyping\\Game.h",
-              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.h",
-              "RelativeToolTip": "Prototyping\\Game.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAtwDYAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-27T15:35:02.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "NPCManager.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.cpp",
               "RelativeDocumentMoniker": "Prototyping\\NPCManager.cpp",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPCManager.cpp",
               "RelativeToolTip": "Prototyping\\NPCManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAtwCwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-23T08:40:45.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T08:40:45.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BulletManager.cpp",
-              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.cpp",
-              "RelativeDocumentMoniker": "Prototyping\\BulletManager.cpp",
-              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.cpp",
-              "RelativeToolTip": "Prototyping\\BulletManager.cpp",
-              "ViewState": "AgIAABQAAAAAAAAAAAAtwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-27T16:45:05.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "utils.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Engine\\utils.cpp",
               "RelativeDocumentMoniker": "Engine\\utils.cpp",
@@ -297,32 +280,115 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "Action.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Action.h",
               "RelativeDocumentMoniker": "Prototyping\\Action.h",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Action.h",
               "RelativeToolTip": "Prototyping\\Action.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-30T17:30:24.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T17:30:24.476Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "HudHealth.cpp",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.cpp",
+              "RelativeDocumentMoniker": "Prototyping\\HudHealth.cpp",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.cpp",
+              "RelativeToolTip": "Prototyping\\HudHealth.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-05T16:03:19.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HudManager.cpp",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.cpp",
+              "RelativeDocumentMoniker": "Prototyping\\HudManager.cpp",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.cpp",
+              "RelativeToolTip": "Prototyping\\HudManager.cpp",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-05T13:16:42.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "HudManager.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.h",
               "RelativeDocumentMoniker": "Prototyping\\HudManager.h",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.h",
               "RelativeToolTip": "Prototyping\\HudManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-05T13:04:32.027Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 8,
+              "Title": "BulletManager.cpp",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.cpp",
+              "RelativeDocumentMoniker": "Prototyping\\BulletManager.cpp",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.cpp",
+              "RelativeToolTip": "Prototyping\\BulletManager.cpp",
+              "ViewState": "AgIAABQAAAAAAAAAAAAtwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-27T16:45:05.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.h",
+              "RelativeDocumentMoniker": "Prototyping\\Game.h",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Game.h",
+              "RelativeToolTip": "Prototyping\\Game.h",
+              "ViewState": "AgIAADMAAAAAAAAAAAAkwEEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-27T15:35:02.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.h",
+              "RelativeDocumentMoniker": "Prototyping\\Player.h",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Player.h",
+              "RelativeToolTip": "Prototyping\\Player.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-27T15:31:34.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NPC.cpp",
+              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.cpp",
+              "RelativeDocumentMoniker": "Prototyping\\NPC.cpp",
+              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\NPC.cpp",
+              "RelativeToolTip": "Prototyping\\NPC.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-18T08:11:51.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "ViewState": "AgIAAHkCAAAAAAAAAAAtwIkCAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-08T14:29:08.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "utils.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Engine\\utils.h",
               "RelativeDocumentMoniker": "Engine\\utils.h",
@@ -334,19 +400,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 10,
               "Title": "HudObject.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.cpp",
               "RelativeDocumentMoniker": "Prototyping\\HudObject.cpp",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.cpp",
               "RelativeToolTip": "Prototyping\\HudObject.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAtwBAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwBAAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-05T13:10:25.109Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "BulletManager.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\BulletManager.h",
               "RelativeDocumentMoniker": "Prototyping\\BulletManager.h",
@@ -358,19 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "HudHealth.cpp",
-              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.cpp",
-              "RelativeDocumentMoniker": "Prototyping\\HudHealth.cpp",
-              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudHealth.cpp",
-              "RelativeToolTip": "Prototyping\\HudHealth.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-05T16:03:19.014Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\main.cpp",
               "RelativeDocumentMoniker": "Prototyping\\main.cpp",
@@ -382,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "structs.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Engine\\structs.h",
               "RelativeDocumentMoniker": "Engine\\structs.h",
@@ -394,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "structs.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Engine\\structs.cpp",
               "RelativeDocumentMoniker": "Engine\\structs.cpp",
@@ -406,31 +460,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 11,
               "Title": "HudObject.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.h",
               "RelativeDocumentMoniker": "Prototyping\\HudObject.h",
               "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudObject.h",
               "RelativeToolTip": "Prototyping\\HudObject.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-05T13:05:01.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "HudManager.cpp",
-              "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.cpp",
-              "RelativeDocumentMoniker": "Prototyping\\HudManager.cpp",
-              "ToolTip": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\HudManager.cpp",
-              "RelativeToolTip": "Prototyping\\HudManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-05T13:16:42.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Team.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Team.h",
               "RelativeDocumentMoniker": "Prototyping\\Team.h",
@@ -442,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "BaseGame.cpp",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Engine\\BaseGame.cpp",
               "RelativeDocumentMoniker": "Engine\\BaseGame.cpp",
@@ -454,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Pickup.h",
               "DocumentMoniker": "C:\\DAE\\Visual Studio\\Gameplay Scripting\\You--Robot\\Prototyping\\Pickup.h",
               "RelativeDocumentMoniker": "Prototyping\\Pickup.h",

@@ -39,5 +39,6 @@ private:
 	float m_FrameTimer;
 	float m_CurrentFrameTime;
 	bool m_IsDead;
+	bool m_IsLookingLeft;
 };
 

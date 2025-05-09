@@ -10,8 +10,10 @@ public:
 	void SetMaxHealth(int delta);
 	void SetCurrentHealth(int delta);
 	int GetCurrentHealth();
+	void Restart();
 private:
 	int m_MaxHealth;
+	int m_StartHealth;
 	int m_CurrentHealth;
 	bool m_HasUpdatedRecently;
 	int m_StoredDelta;

@@ -5,6 +5,7 @@ HudHealth::HudHealth(Texture* texture, Rectf pos, int value) :
 	HudObject(texture, pos),
 	m_HasUpdatedRecently{ false },
 	m_MaxHealth{value},
+	m_StartHealth{value},
 	m_CurrentHealth{value},
 	m_StoredDelta{}
 {
@@ -66,4 +67,10 @@ void HudHealth::SetCurrentHealth(int delta)
 int HudHealth::GetCurrentHealth()
 {
 	return m_CurrentHealth;
+}
+
+void HudHealth::Restart()
+{
+	m_MaxHealth = m_StartHealth;
+	m_CurrentHealth = m_StartHealth;
 }

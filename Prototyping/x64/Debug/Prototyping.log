@@ -1,16 +1,16 @@
-﻿  LINK : C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\x64\Debug\Prototyping.exe not found or not built by the last incremental link; performing full link
-  Prototyping.vcxproj -> C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\x64\Debug\Prototyping.exe
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLMain\SDL2-2.30.11\lib\x64\SDL2.dll
-  1 File(s) copied
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLImage\SDL2_image-2.8.4\lib\x64\SDL2_image.dll
-  1 File(s) copied
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLMixer\SDL2_mixer-2.8.0\lib\x64\SDL2_mixer.dll
-  1 File(s) copied
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Libraries\SDLTtf\SDL2_ttf-2.24.0\lib\x64\SDL2_ttf.dll
-  1 File(s) copied
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\bullet1.png
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\Font.ttf
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\HudHealth.png
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\PlayerSpritesheet.png
-  C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Resources\Target.png
-  5 File(s) copied
+﻿  Bullet.cpp
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Bullet.cpp(111,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+  BulletManager.cpp
+  Game.cpp
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(106,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(107,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(108,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(109,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(228,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(229,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\Game.cpp(287,15): error C2039: 'DrawHealth': is not a member of 'HudManager'
+      C:\DAE\Visual Studio\Gameplay Scripting\You--Robot\Prototyping\HudManager.h(6,7):
+      see declaration of 'HudManager'
+  
+  HudManager.cpp
+  main.cpp

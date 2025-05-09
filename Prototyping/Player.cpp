@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "Player.h"
 #include <iostream>
 
@@ -13,7 +13,8 @@ Player::Player() :
 	m_CurrentFrameTime{0.f},
 	m_CurrentFrame{ 0.f, 0.f, 17.f, 16.f },
 	m_IsDead{0},
-	m_IsVisible{true}
+	m_IsVisible{true},
+	m_IsLookingLeft{false}
 {
 }
 
@@ -21,6 +22,11 @@ void Player::Draw() const
 {
 	if (m_IsVisible)
 	{
+		if (m_IsLookingLeft)
+		{
+			
+		}
+		
 		m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
 	}
 }
@@ -139,42 +145,40 @@ void Player::Update(Vector2f velocity, float elapsedSec, std::vector<std::vector
 			m_State = State::Walk;
 		}
 
-		// Calculate proposed movement
+		// сalc proposed movement
 		Vector2f proposedMovement = velocity * elapsedSec;
 		
-		// Try horizontal movement first
+		// if we have a horizontal component...
 		if (proposedMovement.x != 0)
 		{
 			Rectf newBounds = m_Bounds;
 			newBounds.left += proposedMovement.x;
 			
-			// Check if new position would cause collision
+			// create a bool to store information if we would collide
 			bool wouldCollide = false;
 			
-			// Get corners of the new position
+			// calc newBounds corners
 			Vector2f newBottomLeft{ newBounds.left, newBounds.bottom };
 			Vector2f newBottomRight{ newBounds.left + newBounds.width, newBounds.bottom };
 			Vector2f newTopLeft{ newBounds.left, newBounds.bottom + newBounds.height };
 			Vector2f newTopRight{ newBounds.left + newBounds.width, newBounds.bottom + newBounds.height };
 			
-			// Check each corner against all obstacles
+			// check each corner against each obstacle
 			for (const auto& obstacle : levelVerticies)
 			{
-				// Skip the level boundary
-				if (&obstacle == &levelVerticies[0]) continue;
 				
+				// if a corner is inside any boundary...
 				if (utils::IsPointInPolygon(newBottomLeft, obstacle) ||
 					utils::IsPointInPolygon(newBottomRight, obstacle) ||
 					utils::IsPointInPolygon(newTopLeft, obstacle) ||
 					utils::IsPointInPolygon(newTopRight, obstacle))
 				{
-					wouldCollide = true;
+					wouldCollide = true; // we must've collided
 					break;
 				}
 			}
 			
-			// If no collision, apply horizontal movement
-			if (!wouldCollide)
+			if (!wouldCollide) // since we would've collided, we shouldn't move horizontaly
 			{
 				m_Bounds.left = newBounds.left;
 			}
@@ -198,8 +202,7 @@ void Player::Update(Vector2f velocity, float elapsedSec, std::vector<std::vector
 			// Check each corner against all obstacles
 			for (const auto& obstacle : levelVerticies)
 			{
-				// Skip the level boundary
-				if (&obstacle == &levelVerticies[0]) continue;
+				
 				
 				if (utils::IsPointInPolygon(newBottomLeft, obstacle) ||
 					utils::IsPointInPolygon(newBottomRight, obstacle) ||
@@ -240,13 +243,13 @@ void Player::NextFrame()
 	case Player::State::Idle:
 		if (m_CurrentFrame.bottom == 0.f)
 		{
-			m_CurrentFrame.left = float((int(m_CurrentFrame.left) + 18));
+			m_CurrentFrame.left = m_CurrentFrame.left + 18.f;
 
 		}
 		else
 		{
 			m_CurrentFrame = Rectf{ 0.f, 0.f, 17.f, 16.f };
-			m_Bounds.width = m_CurrentFrame.width * 2.5;
+			m_Bounds.width = m_CurrentFrame.width * 2.5 ;
 			m_Bounds.height = m_CurrentFrame.height * 2.5;
 		}
 		break;

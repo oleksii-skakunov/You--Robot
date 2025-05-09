@@ -29,7 +29,8 @@ Game::Game( const Window& window )
 	m_RestartText{"Press R to restart", "Font.ttf", 20, Color4f{1.f, 1.f, 1.f, 1.f}},
 	m_RestartingText{"Restarting...", "Font.ttf", 20, Color4f{1.f, 1.f, 1.f, 1.f}},
 	m_RestartHoldTime{0.f},
-	m_IsHoldingRestart{false}
+	m_IsHoldingRestart{false},
+	m_Test{"PlayerSpritesheet.png"}
 {
 	Initialize();
 }
@@ -42,10 +43,28 @@ Game::~Game( )
 void Game::Initialize()
 {
 	m_VerticiesLevel.push_back(std::vector < Vector2f>{
-		Vector2f{ 5.f, 5.f },
-			Vector2f{ GetViewPort().width - 5.f,5.f },
-			Vector2f(GetViewPort().width - 5.f, GetViewPort().height - 5.f),
-			Vector2f(5, GetViewPort().height - 5.f)
+		Vector2f{ -5.f, -5.f },
+			Vector2f{ GetViewPort().width + 5.f,-5.f },
+			Vector2f(GetViewPort().width + 5.f, 5.f),
+			Vector2f(-5, 5.f)
+	});
+	m_VerticiesLevel.push_back(std::vector < Vector2f>{
+		Vector2f{ GetViewPort().width - 5.f, -5.f },
+			Vector2f{ GetViewPort().width + 5.f,-5.f },
+			Vector2f(GetViewPort().width + 5.f, GetViewPort().height+5.f),
+			Vector2f(GetViewPort().width - 5.f, GetViewPort().height + 5.f)
+	});
+	m_VerticiesLevel.push_back(std::vector < Vector2f>{
+		Vector2f{ - 5.f, GetViewPort().height -5.f },
+			Vector2f{ GetViewPort().width + 5.f,GetViewPort().height - 5.f },
+			Vector2f(GetViewPort().width + 5.f, GetViewPort().height + 5.f),
+			Vector2f(- 5.f, GetViewPort().height + 5.f)
+	});
+	m_VerticiesLevel.push_back(std::vector < Vector2f>{
+		Vector2f{ -5.f, -5.f },
+			Vector2f{ 5.f, -5.f },
+			Vector2f{ 5.f, GetViewPort().height + 5.f },
+			Vector2f(-5.f, GetViewPort().height + 5.f)
 	});
 	std::vector<std::vector<Vector2f>> m_VerticiesTarget{};
 	std::vector<std::vector<Vector2f>> m_VerticiesNonTarget{};
@@ -58,11 +77,17 @@ void Game::GenerateObstacles()
 {
 	// Remove previously generated obstacles
 	// Keep only the first element (the level boundary) in m_VerticiesLevel
-	if (m_VerticiesLevel.size() > 1)
+	if (m_VerticiesLevel.size() > 4)
 	{
-		auto levelBoundary = m_VerticiesLevel[0];
+		std::vector < Vector2f> levelBoundaryBottom = m_VerticiesLevel[0];
+		std::vector < Vector2f> levelBoundaryRight = m_VerticiesLevel[1];
+		std::vector < Vector2f> levelBoundaryUp = m_VerticiesLevel[2];
+		std::vector < Vector2f> levelBoundaryLeft = m_VerticiesLevel[3];
 		m_VerticiesLevel.clear();
-		m_VerticiesLevel.push_back(levelBoundary);
+		m_VerticiesLevel.push_back(levelBoundaryBottom);
+		m_VerticiesLevel.push_back(levelBoundaryRight);
+		m_VerticiesLevel.push_back(levelBoundaryUp);
+		m_VerticiesLevel.push_back(levelBoundaryLeft);
 	}
 	m_GeneratedObstacles.clear();
 
@@ -255,6 +280,7 @@ bool Game::IsWaveComplete() const
 void Game::Draw( ) const
 {
 	ClearBackground( );
+	//m_Test.Draw(Rectf{ 100.f,100.f, 100.f, 100.f },Rectf{0.f,0.f,25.f,25.f});
 	m_Player.Draw();
 	m_BulletManager.Draw();
 	m_NPCManager.Draw();
@@ -489,7 +515,7 @@ void Game::RestartGame()
 	
 	// Reset player state
 	m_Player.Reset();
-	
+	m_HudManager.Restart();
 	// Clear all enemies and bullets
 	m_NPCManager.DeleteAll();
 	m_BulletManager.DeleteAll();

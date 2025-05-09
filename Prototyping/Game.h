@@ -58,7 +58,7 @@ private:
 	std::vector<std::vector<Vector2f>> m_GeneratedObstacles;
 	std::vector<NPC> m_Enemies;
 	std::vector<std::vector<Vector2f>> m_Obstacles;
-	
+	Texture m_Test;
 	// Teleport system
 	float m_TeleportHoldTime;
 	float m_RequiredHoldTime;

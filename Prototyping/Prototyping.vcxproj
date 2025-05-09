@@ -164,6 +164,7 @@ xcopy "$(SolutionDir)Resources\*.*" "$(TargetDir)" /y /d /s</Command>
     <ClCompile Include="HudHealth.cpp" />
     <ClCompile Include="HudManager.cpp" />
     <ClCompile Include="HudObject.cpp" />
+    <ClCompile Include="HudScore.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="NPCManager.cpp" />
@@ -180,6 +181,7 @@ xcopy "$(SolutionDir)Resources\*.*" "$(TargetDir)" /y /d /s</Command>
     <ClInclude Include="HudHealth.h" />
     <ClInclude Include="HudManager.h" />
     <ClInclude Include="HudObject.h" />
+    <ClInclude Include="HudScore.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="NPCManager.h" />
     <ClInclude Include="pch.h" />
