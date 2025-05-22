@@ -17,6 +17,7 @@ void HudScore::Update(int value)
 {
 	m_Score += value;
 	std::string string = std::to_string(m_Score);
+	delete HudObject::m_Texture;
 	HudObject::m_Texture = new Texture{ string, "Font.ttf", 20, Color4f{1.f,1.f,1.f,1.f} };
 }
 
@@ -28,4 +29,8 @@ int HudScore::GetScore()
 void HudScore::Restart()
 {
 	m_Score = 0;
+	// Update the texture to show 0
+	std::string string = std::to_string(m_Score);
+	delete HudObject::m_Texture;
+	HudObject::m_Texture = new Texture{ string, "Font.ttf", 20, Color4f{1.f,1.f,1.f,1.f} };
 }

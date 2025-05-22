@@ -108,7 +108,7 @@ bool Bullet::HasStopped() const
 
 bool Bullet::lineSegmentIntersect(Vector2f p1, Vector2f p2, Vector2f p3, Vector2f p4)
 {
-	float epsilon{ 1e-8 };
+	float epsilon{ float(1e-8) };
 	Vector2f directionVector1{ p1, p2 };
 	Vector2f directionVector2{ p3, p4 };
 	float denominator{ directionVector1.x * directionVector2.y - directionVector2.x * directionVector1.y };

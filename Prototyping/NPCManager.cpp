@@ -29,6 +29,7 @@ void NPCManager::Update(float elapsedSec, Vector2f targetPos, std::vector<std::v
 		}
 		else
 		{
+			m_NPCs[i]->SetLevelVertices(levelVerticies);
 			m_NPCs[i]->Update(targetPos, elapsedSec, levelVerticies);
 		}
 	}
@@ -44,7 +45,12 @@ void NPCManager::AddNPC(int team, const Vector2f& addPos, std::vector<std::vecto
 {
 	m_NPCs.push_back(new NPC{ static_cast<Team>(team), addPos });
 	AddHitboxToVector(targetVector, m_NPCs.size() - 1);
+}
 
+void NPCManager::AddBossNPC(int team, const Vector2f& addPos, std::vector<std::vector<Vector2f>>& targetVector)
+{
+	m_NPCs.push_back(new NPC{ static_cast<Team>(team), addPos, true });
+	AddHitboxToVector(targetVector, m_NPCs.size() - 1);
 }
 
 void NPCManager::UpdateVector(std::vector<std::vector<Vector2f>>& targetVector, Team team)

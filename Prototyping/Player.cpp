@@ -14,7 +14,10 @@ Player::Player() :
 	m_CurrentFrame{ 0.f, 0.f, 17.f, 16.f },
 	m_IsDead{0},
 	m_IsVisible{true},
-	m_IsLookingLeft{false}
+	m_IsLookingLeft{false},
+	m_CurrentAmmo{50},
+	m_MaxAmmo{200},
+	m_ShootCooldown{0.f}
 {
 }
 
@@ -24,10 +27,19 @@ void Player::Draw() const
 	{
 		if (m_IsLookingLeft)
 		{
-			
+			glPushMatrix();
+			glTranslatef(GetCenterPos().x, GetCenterPos().y, 0);
+			glScalef(-1, 1, 1);
+			glTranslatef(-GetCenterPos().x, -GetCenterPos().y, 0);
+			m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
+			glPopMatrix();
+		}
+		else
+		{
+			m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
 		}
 		
-		m_Spritesheet.Draw(m_Bounds, m_CurrentFrame);
+		
 	}
 }
 
@@ -39,8 +51,21 @@ void Player::DebugDraw() const
 
 bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetVector, std::vector<std::vector<Vector2f>> levelVector, std::vector<std::vector<Vector2f>> nonTargetVector)
 {
+	if (m_ShootCooldown > 0.f)
+	{
+		return false;
+	}
+
 	if (not m_IsDead)
 	{
+		if (mousePos.x > GetCenterPos().x)
+		{
+			m_IsLookingLeft = false;
+		}
+		else if ( mousePos.x < GetCenterPos().x)
+		{
+			m_IsLookingLeft = true;
+		}
 		if (m_Law_NoHarmNonTarget)
 		{
 			float angle{ float(atan2(double((mousePos.y - GetCenterPos().y)),double((mousePos.x - GetCenterPos().x)))) };
@@ -88,6 +113,7 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 					if (utils::Raycast(targetVector[i], GetCenterPos(), mousePos, m_HitInfo))
 					{
 						std::cout << "DEBUG: shot allowed - enemy was detected\n";
+						m_ShootCooldown = SHOOT_COOLDOWN_TIME;
 						return true;
 					}
 				}
@@ -96,6 +122,7 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 					if (utils::Raycast(levelVector[i], GetCenterPos(), mousePos, m_HitInfo))
 					{
 						std::cout << "DEBUG: shot allowed - wall was detected\n";
+						m_ShootCooldown = SHOOT_COOLDOWN_TIME;
 						return true;
 					}
 				}
@@ -107,6 +134,7 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 		else
 		{
 			std::cout << "DEBUG: shot allowed - law disabled\n";
+			m_ShootCooldown = SHOOT_COOLDOWN_TIME;
 			return true;
 		}
 	}
@@ -134,6 +162,19 @@ bool Player::Shoot(Vector2f mousePos, std::vector<std::vector<Vector2f>> targetV
 
 void Player::Update(Vector2f velocity, float elapsedSec, std::vector<std::vector<Vector2f>> levelVerticies)
 {
+	// Update shoot cooldown
+	if (m_ShootCooldown > 0.f)
+	{
+		m_ShootCooldown -= elapsedSec;
+		if (m_ShootCooldown < 0.f)
+		{
+			m_ShootCooldown = 0.f;
+		}
+	}
+
+	// Store the level vertices for collision checks
+	m_LevelVertices = levelVerticies;
+
 	if (!m_IsDead)
 	{
 		if (velocity.x == 0.f && velocity.y == 0.f)
@@ -325,7 +366,7 @@ Rectf Player::GetBounds() const
 	return m_Bounds;
 }
 
-Vector2f Player::GetCenterPos()
+Vector2f Player::GetCenterPos() const
 {
 	return Vector2f{ m_Bounds.left + (m_Bounds.width / 2), m_Bounds.bottom + (m_Bounds.height / 2) };
 }
@@ -355,6 +396,7 @@ int Player::GetHealth() const
 
 void Player::SetPosition(Vector2f newPos)
 {
+	// Simply set the position, collision checks are handled by TryTeleport
 	m_Bounds.left = newPos.x - (m_Bounds.width / 2);
 	m_Bounds.bottom = newPos.y - (m_Bounds.height / 2);
 }

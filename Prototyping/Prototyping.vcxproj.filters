@@ -57,6 +57,15 @@
     <ClCompile Include="HudScore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HudAmmo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EscapePod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -105,6 +114,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HudScore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EscapePod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

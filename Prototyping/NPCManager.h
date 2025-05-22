@@ -11,6 +11,7 @@ public:
 	void Update(float elapsedSec, Vector2f targetPos, std::vector<std::vector<Vector2f>> levelVerticies);
 	bool Shoot(Vector2f targetPos, int i);
 	void AddNPC(int team, const Vector2f& addPos, std::vector<std::vector<Vector2f>>& targetVector);
+	void AddBossNPC(int team, const Vector2f& addPos, std::vector<std::vector<Vector2f>>& targetVector);
 	void UpdateVector(std::vector<std::vector<Vector2f>>& targetVector, Team team);
 	void DeleteAll();
 	const std::vector<NPC*>& GetNPCVector() const;

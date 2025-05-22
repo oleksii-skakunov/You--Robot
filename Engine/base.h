@@ -19,8 +19,8 @@
 
 // SDL extension libs 
 #pragma comment(lib, "SDL2_image.lib")  
-#pragma comment(lib, "SDL2_ttf.lib") 
 #pragma comment(lib, "SDL2_mixer.lib")  
+#pragma comment(lib, "SDL2_ttf.lib")
 
 // SDL and OpenGL Includes
 #pragma warning(disable : 26812)
@@ -33,4 +33,4 @@
 
 #pragma warning(default : 26812)
 #include "structs.h"
-
+#include "iostream"

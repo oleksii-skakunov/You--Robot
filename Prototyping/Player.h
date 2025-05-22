@@ -13,13 +13,16 @@ public:
 	int GetBulletType();
 	Vector2f GetPos();
 	Rectf GetBounds() const;
-	Vector2f GetCenterPos();
+	Vector2f GetCenterPos() const;
 	void DebugSetLaw(); // should make a class that holds law id, law desc and law bool and manipulate a vector of them
 	void SetHealth(int delta);
 	int GetHealth() const;
 	void SetPosition(Vector2f newPos);
 	void SetVisible(bool isVisible);
 	void Reset();
+	int GetCurrentAmmo() { return m_CurrentAmmo; }
+	int GetMaxAmmo() { return m_MaxAmmo; }
+	void SetCurrentAmmo(int delta) { m_CurrentAmmo += delta; }
 private:
 	int m_Health;
 	Texture m_Spritesheet;
@@ -40,5 +43,10 @@ private:
 	float m_CurrentFrameTime;
 	bool m_IsDead;
 	bool m_IsLookingLeft;
+	int m_CurrentAmmo;
+	int m_MaxAmmo;
+	std::vector<std::vector<Vector2f>> m_LevelVertices;
+	float m_ShootCooldown;
+	static constexpr float SHOOT_COOLDOWN_TIME = 0.2f; // 0.2 seconds between shots
 };
 
